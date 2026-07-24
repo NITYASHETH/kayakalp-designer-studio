@@ -1,18 +1,10 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import { Search, Heart, ShoppingBag, User, Menu, Phone, MessageCircle } from 'lucide-react';
+import { Search, Heart, ShoppingBag, User, Menu } from 'lucide-react';
 import { useWishlist } from '@/context/WishlistContext';
 import { useCart } from '@/context/CartContext';
 import { useSearch } from '@/context/SearchContext';
-
-const InstagramIcon = (props: React.SVGProps<SVGSVGElement>) => (
-  <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round" {...props}>
-    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
-  </svg>
-);
 
 interface NavbarProps {
   onOpenMobileNav: () => void;
@@ -62,6 +54,7 @@ export function Navbar({
           {/* Left: Brand Logo & Mobile Trigger */}
           <div className="flex items-center gap-3">
             <button
+              suppressHydrationWarning
               onClick={onOpenMobileNav}
               className="rounded-lg p-2 text-[#4A0E17] hover:bg-[#E5DFD3]/40 lg:hidden"
               aria-label="Open Menu"
@@ -83,6 +76,7 @@ export function Navbar({
               return (
                 <button
                   key={link}
+                  suppressHydrationWarning
                   onClick={() => handleCategoryClick(link)}
                   className={`transition-all pb-0.5 border-b-2 ${
                     isActive
@@ -102,6 +96,7 @@ export function Navbar({
             <div className="relative hidden md:flex items-center">
               <Search className="absolute left-3.5 h-4 w-4 text-[#888]" />
               <input
+                suppressHydrationWarning
                 type="text"
                 placeholder="Search for luxury..."
                 value={searchQuery}
@@ -112,6 +107,7 @@ export function Navbar({
             </div>
 
             <button
+              suppressHydrationWarning
               onClick={() => setIsSearchOpen(true)}
               className="rounded-full p-2 text-[#4A0E17] hover:bg-[#E5DFD3]/40 md:hidden"
               title="Search"
@@ -119,40 +115,9 @@ export function Navbar({
               <Search className="h-5 w-5" />
             </button>
 
-            {/* Call Us Link */}
-            <a
-              href="tel:+911149887700"
-              className="hidden xl:flex items-center gap-1 text-xs font-bold text-[#4A0E17] hover:text-[#C5A059] transition"
-              title="Call Us: +91 (011) 4988-7700"
-            >
-              <Phone className="h-4 w-4 text-[#C5A059]" />
-              <span>Call Us</span>
-            </a>
-
-            {/* WhatsApp Link */}
-            <a
-              href="https://wa.me/919810012345?text=Hello%20Kayakalp,%20I%20want%20to%20inquire%20about%20bridal%20outfits"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hidden sm:flex items-center justify-center rounded-full p-2 text-[#059669] hover:bg-[#E5DFD3]/40 transition"
-              title="Chat on WhatsApp"
-            >
-              <MessageCircle className="h-5 w-5 fill-[#10B981] text-white" />
-            </a>
-
-            {/* Instagram Link */}
-            <a
-              href="https://instagram.com/kayakalpdesignerstudio"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hidden sm:flex items-center justify-center rounded-full p-2 text-[#E1306C] hover:bg-[#E5DFD3]/40 transition"
-              title="Follow us on Instagram"
-            >
-              <InstagramIcon className="h-5 w-5" />
-            </a>
-
             {/* Wishlist Button */}
             <button
+              suppressHydrationWarning
               onClick={() => setIsWishlistOpen(true)}
               className="relative rounded-full p-2 text-[#4A0E17] hover:bg-[#E5DFD3]/40 transition"
               title="Wishlist"
@@ -167,6 +132,7 @@ export function Navbar({
 
             {/* Shopping Bag Button */}
             <button
+              suppressHydrationWarning
               onClick={() => setIsCartOpen(true)}
               className="relative rounded-full p-2 text-[#4A0E17] hover:bg-[#E5DFD3]/40 transition"
               title="Cart"
@@ -181,6 +147,7 @@ export function Navbar({
 
             {/* Account Button */}
             <button
+              suppressHydrationWarning
               onClick={onOpenAccount}
               className="rounded-full p-2 text-[#4A0E17] hover:bg-[#E5DFD3]/40 transition"
               title="Account"

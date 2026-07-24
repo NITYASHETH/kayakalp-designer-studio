@@ -179,6 +179,7 @@ export function FeaturedCollection({
                   {/* Unambiguous Action Buttons: ADD TO CART & BUY NOW */}
                   <div className="mt-5 grid grid-cols-2 gap-2">
                     <button
+                      suppressHydrationWarning
                       onClick={() => handleAddToCart(product)}
                       className="flex items-center justify-center gap-1.5 rounded-lg border-2 border-[#111827] bg-white py-2.5 text-xs font-bold uppercase text-[#111827] hover:bg-[#F3F4F6] transition"
                     >
@@ -187,6 +188,7 @@ export function FeaturedCollection({
                     </button>
 
                     <button
+                      suppressHydrationWarning
                       onClick={() => handleBuyNow(product)}
                       className="flex items-center justify-center gap-1.5 rounded-lg bg-[#111827] py-2.5 text-xs font-bold uppercase text-[#F59E0B] hover:bg-[#1F2937] transition shadow-md"
                     >
