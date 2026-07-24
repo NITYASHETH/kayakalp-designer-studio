@@ -82,14 +82,14 @@ export default function RootLayout({
   };
 
   return (
-    <html lang="en" className={`${playfair.variable} ${inter.variable}`}>
+    <html lang="en" suppressHydrationWarning className={`${playfair.variable} ${inter.variable}`}>
       <head>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className="antialiased selection:bg-[#EAE5DC] selection:text-[#1A1918]">
+      <body suppressHydrationWarning className="antialiased selection:bg-[#EAE5DC] selection:text-[#1A1918]">
         <WishlistProvider>
           <CartProvider>
             <CompareProvider>
