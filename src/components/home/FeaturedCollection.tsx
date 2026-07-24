@@ -97,6 +97,7 @@ export function FeaturedCollection({
                   {/* Quick Action Badges (Wishlist & Compare) */}
                   <div className="absolute right-3 top-3 flex flex-col gap-2 z-10">
                     <button
+                      suppressHydrationWarning
                       onClick={() => inWishlist ? removeFromWishlist(product.id) : addToWishlist(product)}
                       className="flex h-9 w-9 items-center justify-center rounded-full bg-white/90 shadow text-[#111827] transition hover:bg-[#EF4444] hover:text-white"
                       title={inWishlist ? 'Remove from Wishlist' : 'Add to Wishlist'}
@@ -105,6 +106,7 @@ export function FeaturedCollection({
                     </button>
 
                     <button
+                      suppressHydrationWarning
                       onClick={() => addToCompare(product)}
                       className={`flex h-9 w-9 items-center justify-center rounded-full shadow transition ${
                         inCompare ? 'bg-[#111827] text-[#F59E0B]' : 'bg-white/90 text-[#111827] hover:bg-[#111827] hover:text-white'
@@ -117,6 +119,7 @@ export function FeaturedCollection({
 
                   {/* Quick View Button */}
                   <button
+                    suppressHydrationWarning
                     onClick={() => setSelectedProductForQuickView(product)}
                     className="absolute inset-x-4 bottom-4 flex items-center justify-center gap-1.5 rounded-lg bg-white/95 py-2.5 text-xs font-bold text-[#111827] uppercase tracking-wider shadow-lg opacity-0 transition-opacity group-hover:opacity-100 hover:bg-[#111827] hover:text-white"
                   >
