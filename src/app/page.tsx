@@ -39,6 +39,8 @@ export default function Home() {
       <MobileNav
         isOpen={isMobileNavOpen}
         onClose={() => setIsMobileNavOpen(false)}
+        selectedCategory={selectedCategory}
+        onSelectCategory={setSelectedCategory}
       />
 
       {/* High-Converting E-Commerce Hero Banners */}
