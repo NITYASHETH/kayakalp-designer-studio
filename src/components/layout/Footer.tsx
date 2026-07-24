@@ -1,7 +1,15 @@
 'use client';
 
 import React from 'react';
-import { Mail, Share2, Globe, Sparkles, Phone, MapPin, Award } from 'lucide-react';
+import { Mail, Phone, MapPin, Award, MessageCircle } from 'lucide-react';
+
+const InstagramIcon = (props: React.SVGProps<SVGSVGElement>) => (
+  <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round" {...props}>
+    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+  </svg>
+);
 
 export function Footer() {
   return (
@@ -23,9 +31,36 @@ export function Footer() {
             </p>
 
             <div className="mt-6 flex items-center gap-4 text-[#C5A059]">
-              <a href="#" className="hover:text-white transition" aria-label="Share"><Share2 className="h-5 w-5" /></a>
-              <a href="#" className="hover:text-white transition" aria-label="Website"><Globe className="h-5 w-5" /></a>
-              <a href="#" className="hover:text-white transition" aria-label="Exclusives"><Sparkles className="h-5 w-5" /></a>
+              <a
+                href="https://instagram.com/kayakalpdesignerstudio"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-white transition flex items-center gap-1.5 text-xs font-semibold"
+                aria-label="Instagram"
+              >
+                <InstagramIcon className="h-5 w-5 text-[#E1306C]" />
+                <span>Instagram</span>
+              </a>
+
+              <a
+                href="https://wa.me/919810012345?text=Hello%20Kayakalp,%20I%20want%20to%20inquire%20about%20bridal%20outfits"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-white transition flex items-center gap-1.5 text-xs font-semibold"
+                aria-label="WhatsApp"
+              >
+                <MessageCircle className="h-5 w-5 text-[#10B981]" />
+                <span>WhatsApp</span>
+              </a>
+
+              <a
+                href="tel:+911149887700"
+                className="hover:text-white transition flex items-center gap-1.5 text-xs font-semibold"
+                aria-label="Call Us"
+              >
+                <Phone className="h-5 w-5 text-[#D4AF37]" />
+                <span>Call Us</span>
+              </a>
             </div>
           </div>
 

@@ -2,7 +2,6 @@
 
 import React, { useState } from 'react';
 import { Navbar } from '@/components/layout/Navbar';
-import { CategoryNav } from '@/components/layout/CategoryNav';
 import { MobileNav } from '@/components/layout/MobileNav';
 import { HeroSection } from '@/components/home/HeroSection';
 import { FeaturedCollection } from '@/components/home/FeaturedCollection';
@@ -15,6 +14,7 @@ import { CompareDrawer } from '@/components/common/CompareDrawer';
 import { PredictiveSearchModal } from '@/components/common/PredictiveSearchModal';
 import { CheckoutModal } from '@/components/checkout/CheckoutModal';
 import { AccountDashboardModal } from '@/components/account/AccountDashboardModal';
+import { FloatingContact } from '@/components/common/FloatingContact';
 import { useWishlist } from '@/context/WishlistContext';
 
 export default function Home() {
@@ -31,12 +31,6 @@ export default function Home() {
       <Navbar
         onOpenMobileNav={() => setIsMobileNavOpen(true)}
         onOpenAccount={() => setIsAccountOpen(true)}
-        selectedCategory={selectedCategory}
-        onSelectCategory={setSelectedCategory}
-      />
-
-      {/* Horizontal Sub-Category Bar */}
-      <CategoryNav
         selectedCategory={selectedCategory}
         onSelectCategory={setSelectedCategory}
       />
@@ -88,6 +82,9 @@ export default function Home() {
         isOpen={isAccountOpen}
         onClose={() => setIsAccountOpen(false)}
       />
+
+      {/* Floating Instagram, WhatsApp & Call Quick Contact Bar */}
+      <FloatingContact />
     </main>
   );
 }
