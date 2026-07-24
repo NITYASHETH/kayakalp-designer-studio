@@ -42,9 +42,17 @@ export function Navbar({
     'Bridal Lehengas',
     'Heritage Sarees',
     'Gowns',
-    'Indo-Western',
+    'Indo Western',
     'Anarkalis',
   ];
+
+  const handleCategoryClick = (link: string) => {
+    onSelectCategory(link);
+    const element = document.getElementById('collections');
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
   return (
     <header className="sticky top-0 z-40 w-full bg-[#FAF9F6]/95 backdrop-blur-md border-b border-[#E5DFD3]">
@@ -71,11 +79,11 @@ export function Navbar({
           {/* Center: Stitch Style Inline Category Navigation */}
           <nav className="hidden lg:flex items-center gap-8 font-serif text-sm font-semibold tracking-wide text-[#4A0E17]">
             {NAV_LINKS.map((link) => {
-              const isActive = selectedCategory === link;
+              const isActive = selectedCategory === link || (selectedCategory === 'Bridal Sarees' && link === 'Heritage Sarees');
               return (
                 <button
                   key={link}
-                  onClick={() => onSelectCategory(link)}
+                  onClick={() => handleCategoryClick(link)}
                   className={`transition-all pb-0.5 border-b-2 ${
                     isActive
                       ? 'border-[#4A0E17] font-bold text-[#4A0E17]'

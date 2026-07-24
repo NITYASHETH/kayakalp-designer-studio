@@ -26,7 +26,10 @@ export function FeaturedCollection({
 
   const filteredProducts = selectedCategory === 'All Collections'
     ? PRODUCTS
-    : PRODUCTS.filter(p => p.category === selectedCategory);
+    : PRODUCTS.filter(p =>
+        (p.category as string) === selectedCategory ||
+        (selectedCategory === 'Heritage Sarees' && p.category === 'Bridal Sarees')
+      );
 
   const handleAddToCart = (product: Product) => {
     addToCart(product, 'M', product.color, 1);
