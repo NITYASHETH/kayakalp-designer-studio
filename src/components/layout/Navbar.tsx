@@ -63,7 +63,7 @@ export function Navbar({
             </button>
 
             <a href="#" className="inline-block">
-              <span className="font-serif text-2xl sm:text-3xl font-extrabold tracking-wider text-[#4A0E17]">
+              <span className="font-serif text-xl sm:text-2xl lg:text-3xl font-extrabold tracking-wider text-[#4A0E17]">
                 KAYAKALP
               </span>
             </a>
